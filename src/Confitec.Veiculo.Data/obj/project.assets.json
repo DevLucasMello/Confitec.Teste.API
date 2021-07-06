@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "FluentValidation/10.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentValidation.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -1520,10 +1529,54 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Confitec.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "FluentValidation": "10.2.3"
+        },
+        "compile": {
+          "bin/placeholder/Confitec.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Confitec.Core.dll": {}
+        }
+      },
+      "Confitec.Veiculo.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Confitec.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Confitec.Veiculo.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Confitec.Veiculo.Domain.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "FluentValidation/10.2.3": {
+      "sha512": "R2w/E6jgg9RPSlg7JQSTHg6AWDwlOXARaV4ZUKrPJ1gi1e+oaBEcomxmo29j9BLZivkyQhOpAboJ9nKZS4/xYA==",
+      "type": "package",
+      "path": "fluentvalidation/10.2.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluent-validation-icon.png",
+        "fluentvalidation.10.2.3.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net5.0/FluentValidation.dll",
+        "lib/net5.0/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml",
+        "lib/netstandard2.1/FluentValidation.dll",
+        "lib/netstandard2.1/FluentValidation.xml"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",
@@ -5788,10 +5841,22 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Confitec.Core/1.0.0": {
+      "type": "project",
+      "path": "../Confitec.Core/Confitec.Core.csproj",
+      "msbuildProject": "../Confitec.Core/Confitec.Core.csproj"
+    },
+    "Confitec.Veiculo.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Confitec.Veiculo.Domain/Confitec.Veiculo.Domain.csproj",
+      "msbuildProject": "../Confitec.Veiculo.Domain/Confitec.Veiculo.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Confitec.Core >= 1.0.0",
+      "Confitec.Veiculo.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.7",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.7",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.7",
@@ -5824,7 +5889,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\dev\\Confitec\\src\\Confitec.Core\\Confitec.Core.csproj": {
+              "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Core\\Confitec.Core.csproj"
+            },
+            "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Domain\\Confitec.Veiculo.Domain.csproj": {
+              "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Domain\\Confitec.Veiculo.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

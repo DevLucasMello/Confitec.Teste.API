@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Aj4INc3T00nkONbqySeuLsDtZJkgNHhI3ebXaSmpY7FYEvmqE4aHDQ6oWi6EsM81swqgk/ZC0Q/ruRwejBZDlg==",
+  "dgSpecHash": "YVz2X416U7X50ZSSaxUkZ0XKrRBM4LIT17M7t18e0TLew9CS5UgQ2HLTFIBKAJy/XW8sJZcFkjncyV5qzqK9Lg==",
   "success": true,
   "projectFilePath": "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Domain\\Confitec.Veiculo.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Lucas\\.nuget\\packages\\fluentvalidation\\10.2.3\\fluentvalidation.10.2.3.nupkg.sha512"
+  ],
   "logs": []
 }

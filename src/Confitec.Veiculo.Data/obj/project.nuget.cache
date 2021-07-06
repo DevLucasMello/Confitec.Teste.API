@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7klHgQT+J/a8S26LI8JR4VoFbDQQC/MGcP1OrZFWltHM1tcmvsOKrmmp9Djmu3t9T1XTdUJ/fHFw/i38nWPMyg==",
+  "dgSpecHash": "1jwoSlO8kDcSRxiBQabRT+xN3VnEKHXPQ2Vpc81wi/IcYyZimFUD0ifKekTAgDOw/00Q1YlemWjHKj/SHPcsCw==",
   "success": true,
   "projectFilePath": "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Data\\Confitec.Veiculo.Data.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Lucas\\.nuget\\packages\\fluentvalidation\\10.2.3\\fluentvalidation.10.2.3.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

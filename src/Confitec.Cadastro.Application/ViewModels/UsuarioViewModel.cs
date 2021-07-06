@@ -9,13 +9,13 @@ namespace Confitec.Cadastro.Application.ViewModels
         public Guid Id { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [MaxLength(20, ErrorMessage = "Este campo deve conter entre 3 e 60 caracteres")]
-        [MinLength(3, ErrorMessage = "Este campo deve conter entre 3 e 60 caracteres")]
+        [MaxLength(50, ErrorMessage = "Este campo deve conter entre 3 e 50 caracteres")]
+        [MinLength(3, ErrorMessage = "Este campo deve conter entre 3 e 50 caracteres")]
         public string PrimeiroNome { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [MaxLength(20, ErrorMessage = "Este campo deve conter entre 3 e 60 caracteres")]
-        [MinLength(3, ErrorMessage = "Este campo deve conter entre 3 e 60 caracteres")]
+        [MaxLength(50, ErrorMessage = "Este campo deve conter entre 3 e 50 caracteres")]
+        [MinLength(3, ErrorMessage = "Este campo deve conter entre 3 e 50 caracteres")]
         public string UltimoNome { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
