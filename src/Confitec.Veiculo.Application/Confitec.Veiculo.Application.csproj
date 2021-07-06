@@ -9,4 +9,10 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Confitec.Core\Confitec.Core.csproj" />
+    <ProjectReference Include="..\Confitec.Veiculo.Data\Confitec.Veiculo.Data.csproj" />
+    <ProjectReference Include="..\Confitec.Veiculo.Domain\Confitec.Veiculo.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

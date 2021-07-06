@@ -30,12 +30,12 @@ namespace Confitec.Condutor.Data.Mappings
             builder.Property(c => c.CPF)
                 .IsRequired()
                 .HasColumnName("CPF")
-                .HasColumnType("varchar(100)");
+                .HasColumnType("varchar(20)");
 
             builder.Property(c => c.Telefone)
                 .IsRequired()
                 .HasColumnName("Telefone")
-                .HasColumnType("varchar(100)");
+                .HasColumnType("varchar(20)");
 
             builder.Property(c => c.Email)
                 .IsRequired()
@@ -45,7 +45,7 @@ namespace Confitec.Condutor.Data.Mappings
             builder.Property(c => c.CNH)
                 .IsRequired()
                 .HasColumnName("CNH")
-                .HasColumnType("varchar(100)");
+                .HasColumnType("varchar(20)");
 
             builder.Property(c => c.DataNascimento)
                 .IsRequired()
