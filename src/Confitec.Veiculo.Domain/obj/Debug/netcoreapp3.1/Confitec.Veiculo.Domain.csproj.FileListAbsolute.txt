@@ -1,0 +1,9 @@
+C:\dev\Confitec\src\Confitec.Veiculo.Domain\bin\Debug\netcoreapp3.1\Confitec.Veiculo.Domain.deps.json
+C:\dev\Confitec\src\Confitec.Veiculo.Domain\bin\Debug\netcoreapp3.1\Confitec.Veiculo.Domain.dll
+C:\dev\Confitec\src\Confitec.Veiculo.Domain\bin\Debug\netcoreapp3.1\Confitec.Veiculo.Domain.pdb
+C:\dev\Confitec\src\Confitec.Veiculo.Domain\obj\Debug\netcoreapp3.1\Confitec.Veiculo.Domain.csprojAssemblyReference.cache
+C:\dev\Confitec\src\Confitec.Veiculo.Domain\obj\Debug\netcoreapp3.1\Confitec.Veiculo.Domain.AssemblyInfoInputs.cache
+C:\dev\Confitec\src\Confitec.Veiculo.Domain\obj\Debug\netcoreapp3.1\Confitec.Veiculo.Domain.AssemblyInfo.cs
+C:\dev\Confitec\src\Confitec.Veiculo.Domain\obj\Debug\netcoreapp3.1\Confitec.Veiculo.Domain.csproj.CoreCompileInputs.cache
+C:\dev\Confitec\src\Confitec.Veiculo.Domain\obj\Debug\netcoreapp3.1\Confitec.Veiculo.Domain.dll
+C:\dev\Confitec\src\Confitec.Veiculo.Domain\obj\Debug\netcoreapp3.1\Confitec.Veiculo.Domain.pdb

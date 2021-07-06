@@ -1,0 +1,12 @@
+C:\dev\Confitec\src\Confitec.Cadastro.Data\bin\Debug\netcoreapp3.1\Confitec.Cadastro.Data.deps.json
+C:\dev\Confitec\src\Confitec.Cadastro.Data\bin\Debug\netcoreapp3.1\Confitec.Cadastro.Data.runtimeconfig.json
+C:\dev\Confitec\src\Confitec.Cadastro.Data\bin\Debug\netcoreapp3.1\Confitec.Cadastro.Data.runtimeconfig.dev.json
+C:\dev\Confitec\src\Confitec.Cadastro.Data\bin\Debug\netcoreapp3.1\Confitec.Cadastro.Data.dll
+C:\dev\Confitec\src\Confitec.Cadastro.Data\bin\Debug\netcoreapp3.1\Confitec.Cadastro.Data.pdb
+C:\dev\Confitec\src\Confitec.Cadastro.Data\obj\Debug\netcoreapp3.1\Confitec.Cadastro.Data.csprojAssemblyReference.cache
+C:\dev\Confitec\src\Confitec.Cadastro.Data\obj\Debug\netcoreapp3.1\Confitec.Cadastro.Data.AssemblyInfoInputs.cache
+C:\dev\Confitec\src\Confitec.Cadastro.Data\obj\Debug\netcoreapp3.1\Confitec.Cadastro.Data.AssemblyInfo.cs
+C:\dev\Confitec\src\Confitec.Cadastro.Data\obj\Debug\netcoreapp3.1\Confitec.Cadastro.Data.csproj.CoreCompileInputs.cache
+C:\dev\Confitec\src\Confitec.Cadastro.Data\obj\Debug\netcoreapp3.1\Confitec.Cadastro.Data.dll
+C:\dev\Confitec\src\Confitec.Cadastro.Data\obj\Debug\netcoreapp3.1\Confitec.Cadastro.Data.pdb
+C:\dev\Confitec\src\Confitec.Cadastro.Data\obj\Debug\netcoreapp3.1\Confitec.Cadastro.Data.genruntimeconfig.cache
