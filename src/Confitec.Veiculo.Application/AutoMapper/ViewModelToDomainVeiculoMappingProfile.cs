@@ -1,12 +1,9 @@
 ﻿using AutoMapper;
 using Confitec.Veiculo.Application.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Confitec.Veiculo.Application.AutoMapper
 {
-    class ViewModelToDomainVeiculoMappingProfile : Profile
+    public class ViewModelToDomainVeiculoMappingProfile : Profile
     {
         public ViewModelToDomainVeiculoMappingProfile()
         {

@@ -3,7 +3,7 @@ using Confitec.Veiculo.Application.ViewModels;
 
 namespace Confitec.Veiculo.Application.AutoMapper
 {
-    class DomainVeiculoToViewModelMappingProfile : Profile
+    public class DomainVeiculoToViewModelMappingProfile : Profile
     {
         public DomainVeiculoToViewModelMappingProfile()
         {

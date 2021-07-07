@@ -15,6 +15,7 @@ namespace Confitec.Veiculo.Application.ViewModels
         [MinLength(11, ErrorMessage = "Este campo deve conter 11 caracteres")]
         public string CPFCondutor { get; set; }
 
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [MaxLength(8, ErrorMessage = "Este campo deve conter entre 7 e 8 caracteres")]
         [MinLength(7, ErrorMessage = "Este campo deve conter entre 7 e 8 caracteres")]
         public string Placa { get; set; }

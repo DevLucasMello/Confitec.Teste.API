@@ -9,8 +9,7 @@ namespace Confitec.Condutor.Data.Mappings
         {
             builder.HasKey(c => c.Id);
 
-            builder.Property(c => c.Placa)
-               .IsRequired()
+            builder.Property(c => c.Placa)               
                .HasColumnName("Placa")
                .HasColumnType("varchar(20)");
 

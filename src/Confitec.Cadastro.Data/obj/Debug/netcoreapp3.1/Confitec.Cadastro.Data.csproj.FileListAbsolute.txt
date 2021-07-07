@@ -10,3 +10,8 @@ C:\dev\Confitec\src\Confitec.Cadastro.Data\obj\Debug\netcoreapp3.1\Confitec.Cada
 C:\dev\Confitec\src\Confitec.Cadastro.Data\obj\Debug\netcoreapp3.1\Confitec.Cadastro.Data.dll
 C:\dev\Confitec\src\Confitec.Cadastro.Data\obj\Debug\netcoreapp3.1\Confitec.Cadastro.Data.pdb
 C:\dev\Confitec\src\Confitec.Cadastro.Data\obj\Debug\netcoreapp3.1\Confitec.Cadastro.Data.genruntimeconfig.cache
+C:\dev\Confitec\src\Confitec.Cadastro.Data\bin\Debug\netcoreapp3.1\Confitec.Cadastro.Domain.dll
+C:\dev\Confitec\src\Confitec.Cadastro.Data\bin\Debug\netcoreapp3.1\Confitec.Core.dll
+C:\dev\Confitec\src\Confitec.Cadastro.Data\bin\Debug\netcoreapp3.1\Confitec.Cadastro.Domain.pdb
+C:\dev\Confitec\src\Confitec.Cadastro.Data\bin\Debug\netcoreapp3.1\Confitec.Core.pdb
+C:\dev\Confitec\src\Confitec.Cadastro.Data\obj\Debug\netcoreapp3.1\Confitec.Cadastro.Data.csproj.CopyComplete

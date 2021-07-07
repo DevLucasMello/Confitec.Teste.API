@@ -7,3 +7,6 @@ C:\dev\Confitec\src\Confitec.Condutor.Domain\obj\Debug\netcoreapp3.1\Confitec.Co
 C:\dev\Confitec\src\Confitec.Condutor.Domain\obj\Debug\netcoreapp3.1\Confitec.Condutor.Domain.csproj.CoreCompileInputs.cache
 C:\dev\Confitec\src\Confitec.Condutor.Domain\obj\Debug\netcoreapp3.1\Confitec.Condutor.Domain.dll
 C:\dev\Confitec\src\Confitec.Condutor.Domain\obj\Debug\netcoreapp3.1\Confitec.Condutor.Domain.pdb
+C:\dev\Confitec\src\Confitec.Condutor.Domain\bin\Debug\netcoreapp3.1\Confitec.Core.dll
+C:\dev\Confitec\src\Confitec.Condutor.Domain\bin\Debug\netcoreapp3.1\Confitec.Core.pdb
+C:\dev\Confitec\src\Confitec.Condutor.Domain\obj\Debug\netcoreapp3.1\Confitec.Condutor.Domain.csproj.CopyComplete
