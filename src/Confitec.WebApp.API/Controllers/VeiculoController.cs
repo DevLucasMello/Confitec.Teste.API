@@ -55,6 +55,7 @@ namespace Confitec.WebApp.API.Controllers
         public async Task<ActionResult<VeiculoViewModel>> CadastrarVeiculo(VeiculoViewModel veiculoViewModel)
         {
             var condutor = await _condutorAppService.ObterCondutorPorId(veiculoViewModel.IdCondutor);
+            var veiculos = await _veiculoAppService.ObterVeiculosPorCPF(veiculoViewModel.CPFCondutor);
 
             if (condutor == null)
             {
@@ -65,6 +66,15 @@ namespace Confitec.WebApp.API.Controllers
             {
                 NotificarErro("CPF do condutor informado é diferente do cadastro");
                 return CustomResponse(veiculoViewModel);
+            }
+            
+            foreach (var veiculo in veiculos)
+            {
+                if (veiculo.Placa == veiculoViewModel.Placa)
+                {
+                    NotificarErro("O condutor já possui este veículo cadastrado");
+                    return CustomResponse(veiculoViewModel);
+                }
             }
 
             if (!ModelState.IsValid) return CustomResponse(ModelState);            
