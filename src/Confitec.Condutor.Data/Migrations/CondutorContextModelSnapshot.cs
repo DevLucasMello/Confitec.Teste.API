@@ -44,10 +44,6 @@ namespace Confitec.Condutor.Data.Migrations
                         .HasColumnType("varchar(100)")
                         .HasColumnName("Email");
 
-                    b.Property<string>("Placa")
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("Placa");
-
                     b.Property<string>("Telefone")
                         .IsRequired()
                         .HasColumnType("varchar(20)")

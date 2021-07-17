@@ -1859,52 +1859,6 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Confitec.Cadastro.Application/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "AutoMapper": "10.1.1",
-          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
-          "Confitec.Cadastro.Data": "1.0.0",
-          "Confitec.Cadastro.Domain": "1.0.0",
-          "Confitec.Core": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Confitec.Cadastro.Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Confitec.Cadastro.Application.dll": {}
-        }
-      },
-      "Confitec.Cadastro.Data/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "Confitec.Cadastro.Domain": "1.0.0",
-          "Confitec.Core": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "5.0.7",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7"
-        },
-        "compile": {
-          "bin/placeholder/Confitec.Cadastro.Data.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Confitec.Cadastro.Data.dll": {}
-        }
-      },
-      "Confitec.Cadastro.Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "Confitec.Core": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Confitec.Cadastro.Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Confitec.Cadastro.Domain.dll": {}
-        }
-      },
       "Confitec.Condutor.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -6548,21 +6502,6 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "Confitec.Cadastro.Application/1.0.0": {
-      "type": "project",
-      "path": "../Confitec.Cadastro.Application/Confitec.Cadastro.Application.csproj",
-      "msbuildProject": "../Confitec.Cadastro.Application/Confitec.Cadastro.Application.csproj"
-    },
-    "Confitec.Cadastro.Data/1.0.0": {
-      "type": "project",
-      "path": "../Confitec.Cadastro.Data/Confitec.Cadastro.Data.csproj",
-      "msbuildProject": "../Confitec.Cadastro.Data/Confitec.Cadastro.Data.csproj"
-    },
-    "Confitec.Cadastro.Domain/1.0.0": {
-      "type": "project",
-      "path": "../Confitec.Cadastro.Domain/Confitec.Cadastro.Domain.csproj",
-      "msbuildProject": "../Confitec.Cadastro.Domain/Confitec.Cadastro.Domain.csproj"
-    },
     "Confitec.Condutor.Application/1.0.0": {
       "type": "project",
       "path": "../Confitec.Condutor.Application/Confitec.Condutor.Application.csproj",
@@ -6601,9 +6540,6 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Confitec.Cadastro.Application >= 1.0.0",
-      "Confitec.Cadastro.Data >= 1.0.0",
-      "Confitec.Cadastro.Domain >= 1.0.0",
       "Confitec.Condutor.Application >= 1.0.0",
       "Confitec.Condutor.Data >= 1.0.0",
       "Confitec.Condutor.Domain >= 1.0.0",
@@ -6646,15 +6582,6 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\dev\\Confitec\\src\\Confitec.Cadastro.Application\\Confitec.Cadastro.Application.csproj": {
-              "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Cadastro.Application\\Confitec.Cadastro.Application.csproj"
-            },
-            "C:\\dev\\Confitec\\src\\Confitec.Cadastro.Data\\Confitec.Cadastro.Data.csproj": {
-              "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Cadastro.Data\\Confitec.Cadastro.Data.csproj"
-            },
-            "C:\\dev\\Confitec\\src\\Confitec.Cadastro.Domain\\Confitec.Cadastro.Domain.csproj": {
-              "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Cadastro.Domain\\Confitec.Cadastro.Domain.csproj"
-            },
             "C:\\dev\\Confitec\\src\\Confitec.Condutor.Application\\Confitec.Condutor.Application.csproj": {
               "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Condutor.Application\\Confitec.Condutor.Application.csproj"
             },

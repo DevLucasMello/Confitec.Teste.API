@@ -7,11 +7,7 @@ namespace Confitec.Condutor.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<Domain.Condutor> builder)
         {
-            builder.HasKey(c => c.Id);
-
-            builder.Property(c => c.Placa)               
-               .HasColumnName("Placa")
-               .HasColumnType("varchar(20)");
+            builder.HasKey(c => c.Id);            
 
             builder.OwnsOne(c => c.Nome, n =>
             {

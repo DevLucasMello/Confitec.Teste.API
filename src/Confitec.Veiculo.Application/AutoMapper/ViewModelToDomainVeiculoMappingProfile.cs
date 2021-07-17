@@ -8,7 +8,7 @@ namespace Confitec.Veiculo.Application.AutoMapper
         public ViewModelToDomainVeiculoMappingProfile()
         {
             CreateMap<VeiculoViewModel, Domain.Veiculo>()
-                .ConstructUsing(v => new Domain.Veiculo(v.CPFCondutor, v.Placa,v.Modelo, v.Marca, v.Cor, v.AnoFabricacao));
+                .ConstructUsing(v => new Domain.Veiculo(v.IdCondutor, v.CPFCondutor, v.Placa,v.Modelo, v.Marca, v.Cor, v.AnoFabricacao));
         }
     }
 }

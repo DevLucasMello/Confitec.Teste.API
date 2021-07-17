@@ -1,4 +1,5 @@
-﻿using FluentValidation.Results;
+﻿using Confitec.Core.Messages;
+using FluentValidation.Results;
 using System;
 using System.Text.RegularExpressions;
 

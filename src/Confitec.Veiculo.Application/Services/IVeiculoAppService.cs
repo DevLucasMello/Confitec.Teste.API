@@ -9,10 +9,10 @@ namespace Confitec.Veiculo.Application.Services
     {
         Task<IEnumerable<VeiculoViewModel>> ObterTodosVeiculos();
         Task<IEnumerable<VeiculoViewModel>> ObterVeiculosPorCPF(string cpf);
-        Task<VeiculoViewModel> ObterVeiculoPorId(Guid id);
-        Task<VeiculoViewModel> ObterVeiculoPorPlaca(string placa);
-        Task AdicionarVeiculo(VeiculoViewModel veiculoViewModel);
-        Task AtualizarVeiculo(VeiculoViewModel veiculoViewModel);
-        Task ExcluirVeiculo(VeiculoViewModel veiculoViewModel);
+        Task<IEnumerable<VeiculoViewModel>> ObterVeiculosPorPlaca(string placa);
+        Task<VeiculoViewModel> ObterVeiculoPorId(Guid id);        
+        Task<bool> AdicionarVeiculo(VeiculoViewModel veiculoViewModel);
+        Task<bool> AtualizarVeiculo(VeiculoViewModel veiculoViewModel);
+        Task<bool> ExcluirVeiculo(VeiculoViewModel veiculoViewModel);
     }
 }

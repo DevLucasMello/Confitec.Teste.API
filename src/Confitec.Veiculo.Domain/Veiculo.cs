@@ -1,10 +1,12 @@
 ﻿using Confitec.Core.DomainObjects;
 using FluentValidation;
+using System;
 
 namespace Confitec.Veiculo.Domain
 {
     public class Veiculo : Entity, IAggregateRoot
     {
+        public Guid IdCondutor { get; private set; }
         public string CPFCondutor { get; private set; }
         public string Placa { get; private set; }
         public string Modelo { get; private set; }
@@ -12,8 +14,9 @@ namespace Confitec.Veiculo.Domain
         public string Cor { get; private set; }
         public int AnoFabricacao { get; private set; }
 
-        public Veiculo(string cpfCondutor, string placa, string modelo, string marca, string cor, int anoFabricacao)
+        public Veiculo(Guid idCondutor, string cpfCondutor, string placa, string modelo, string marca, string cor, int anoFabricacao)
         {
+            IdCondutor = idCondutor;
             CPFCondutor = cpfCondutor;
             Placa = placa;
             Modelo = modelo;
@@ -35,6 +38,10 @@ namespace Confitec.Veiculo.Domain
         {
             public VeiculoValidation()
             {
+                RuleFor(v => v.IdCondutor)
+                .NotEmpty()
+                .WithMessage("O Id do Condutor deve ser informado");
+
                 RuleFor(v => v.CPFCondutor)
                 .NotEmpty()
                 .WithMessage("O CPF deve ser informado")

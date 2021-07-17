@@ -7,8 +7,7 @@ namespace Confitec.Condutor.Domain
 {
     public interface ICondutorRepository : IRepository<Condutor>
     {
-        Task<IEnumerable<Condutor>> ObterTodos();
-        Task<IEnumerable<Condutor>> ObterPorPlaca(string placa);
+        Task<IEnumerable<Condutor>> ObterTodos();        
         Task<Condutor> ObterPorId(Guid id);
         Task<Condutor> ObterPorCPF(string cpf);              
         void Adicionar(Condutor condutor);

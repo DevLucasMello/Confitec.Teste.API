@@ -10,8 +10,8 @@ namespace Confitec.Veiculo.Domain
     {
         Task<IEnumerable<Veiculo>> ObterTodos();
         Task<IEnumerable<Veiculo>> ObterPorCPF(string cpf);
-        Task<Veiculo> ObterPorId(Guid id);
-        Task<Veiculo> ObterPorPlaca(string placa);
+        Task<IEnumerable<Veiculo>> ObterPorPlaca(string placa);
+        Task<Veiculo> ObterPorId(Guid id);        
         void Adicionar(Veiculo condutor);
         void Atualizar(Veiculo condutor);
         void Excluir(Veiculo condutor);

@@ -1,5 +1,3 @@
-using Confitec.Cadastro.Application.AutoMapper;
-using Confitec.Cadastro.Data;
 using Confitec.Condutor.Application.AutoMapper;
 using Confitec.Condutor.Data;
 using Confitec.Veiculo.Application.AutoMapper;
@@ -9,6 +7,7 @@ using Confitec.WebApp.API.Setup;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -38,11 +37,7 @@ namespace Confitec.WebApp.API
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
-
-            services.AddDbContext<UsuarioContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("DefaultConnection")));           
 
             services.AddDbContext<CondutorContext>(options =>
                 options.UseSqlServer(
@@ -51,12 +46,13 @@ namespace Confitec.WebApp.API
             services.AddDbContext<VeiculoContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-
-            services.AddAutoMapper(typeof(DomainUsuarioToViewModelMappingProfile), typeof(ViewModelToDomainUsuarioMappingProfile));
+            
             services.AddAutoMapper(typeof(DomainCondutorToViewModelMappingProfile), typeof(ViewModelToDomainCondutorMappingProfile));
             services.AddAutoMapper(typeof(DomainVeiculoToViewModelMappingProfile), typeof(ViewModelToDomainVeiculoMappingProfile));
 
             services.RegisterServices();
+
+            services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
 
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
             services.AddAuthentication(x =>

@@ -9,6 +9,11 @@ namespace Confitec.Veiculo.Data.Mappings
         {
             builder.HasKey(c => c.Id);
 
+            builder.Property(c => c.IdCondutor)
+               .IsRequired()
+               .HasColumnName("IdCondutor")
+               .HasColumnType("varchar(50)");
+
             builder.Property(c => c.CPFCondutor)
                .IsRequired()
                .HasColumnName("CPFCondutor")

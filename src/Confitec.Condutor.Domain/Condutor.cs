@@ -6,8 +6,7 @@ using System;
 namespace Confitec.Condutor.Domain
 {
     public class Condutor : Entity, IAggregateRoot
-    {
-        public string Placa { get; private set; }
+    {        
         public Nome Nome { get; private set; }
         public string CPF { get; private set; }
         public string Telefone { get; private set; }
@@ -28,17 +27,9 @@ namespace Confitec.Condutor.Domain
         // EF Rel.
         protected Condutor() { }
 
-        public void AdicionarVeiculo(string placa)
-        {
-            if (string.IsNullOrEmpty(placa)) throw new DomainException("Veículo não cadastrado");
-
-            if(!validarPlaca(placa)) throw new DomainException("Placa fora do padrão Brasil e Mercosul");
-            Placa = placa;
-        }
-
         public override bool EhValido()
         {
-            ValidationResult = new CondutorValidation().Validate(this);
+            ValidationResult = new CondutorValidation().Validate(this);            
             return ValidationResult.IsValid;
         }
 

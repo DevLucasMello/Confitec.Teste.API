@@ -1,5 +1,7 @@
 ﻿using Confitec.Condutor.Application.Services;
 using Confitec.Condutor.Application.ViewModels;
+using Confitec.Core.Messages;
+using Confitec.Veiculo.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,111 +10,118 @@ using System.Threading.Tasks;
 namespace Confitec.WebApp.API.Controllers
 {
     [Route("v1/condutor")]
-    public class CondutorController : ControllerBase
+    public class CondutorController : MainController
     {
-        public readonly ICondutorAppService _condutorAppService;        
+        public readonly ICondutorAppService _condutorAppService;
+        public readonly IVeiculoAppService _veiculoAppService;
 
-        public CondutorController(ICondutorAppService condutorAppService)
+        public CondutorController(ICondutorAppService condutorAppService, IVeiculoAppService veiculoAppService, INotificador notificador) : base(notificador)
         {
-            _condutorAppService = condutorAppService;            
+            _condutorAppService = condutorAppService;
+            _veiculoAppService = veiculoAppService;
         }
 
-        [HttpGet]
-        [Route("obterTodos")]
-        public async Task<IEnumerable<CondutorViewModel>> Get()
+        [HttpGet("obterTodos")]       
+        public async Task<IEnumerable<CondutorViewModel>> ObterTodosCondutores()
         {
             var condutores = await _condutorAppService.ObterTodosCondutores();
             return condutores;
         }
 
-        [HttpGet]
-        [Route("obterPorPlaca/{placa}")]
-        public async Task<IEnumerable<CondutorViewModel>> GetByCondutoresPlaca(string placa)
-        {
-            var condutores = await _condutorAppService.ObterCondutoresPorPlaca(placa);
+        [HttpGet("obterPorPlaca/{placa}")]        
+        public async Task<ActionResult<IEnumerable<CondutorViewModel>>> ObterCondutoresPlaca(string placa)
+        {  
+            var veiculos = await _veiculoAppService.ObterVeiculosPorPlaca(placa);
 
-            if (condutores == null) return (IEnumerable<CondutorViewModel>)NotFound("Não foi possível localizar os condutores para a placa informada");
+            if (veiculos == null)
+            {
+                NotificarErro("Não foi possível localizar os condutores para a placa informada");
+                return CustomResponse();
+            }
 
-            return condutores;
+            IList<CondutorViewModel> condutoresDaPlaca = new List<CondutorViewModel>();
+
+            var condutores = await _condutorAppService.ObterTodosCondutores();
+
+            foreach (var condutor in condutores)
+            {
+                foreach (var veiculo in veiculos)
+                {
+                    if (veiculo.CPFCondutor == condutor.CPF)
+                    {
+                        condutoresDaPlaca.Add(condutor);
+                    }
+                }
+            }
+
+            return CustomResponse(condutoresDaPlaca);            
         }
 
-        [HttpGet]
-        [Route("obterPorId/{id:guid}")]
-        public async Task<ActionResult<CondutorViewModel>> GetById(Guid id)
+        [HttpGet("obterPorId/{id:guid}")]        
+        public async Task<ActionResult<CondutorViewModel>> ObterCondutorPorId(Guid id)
         {
             var condutor = await _condutorAppService.ObterCondutorPorId(id);
 
-            if (condutor == null) return NotFound("Não foi possível localizar o condutor");
+            if (condutor == null) CondutorNulo();            
 
-            return condutor;
+            return CustomResponse(condutor);            
         }
 
-        [HttpGet]
-        [Route("obterPorId/{cpf}")]
-        public async Task<ActionResult<CondutorViewModel>> GetByCPF(string cpf)
+        [HttpGet("obterPorCpf/{cpf}")]        
+        public async Task<ActionResult<CondutorViewModel>> ObterCondutorPorCPF(string cpf)
         {
             var condutor = await _condutorAppService.ObterCondutorPorCPF(cpf);
 
-            if (condutor == null) return NotFound("Não foi possível localizar o condutor");
+            if (condutor == null) CondutorNulo();
 
-            return condutor;
+            return CustomResponse(condutor);            
         }
 
-        [HttpPost]
-        [Route("adicionarCondutor")]
-        public async Task<ActionResult<CondutorViewModel>> Post(CondutorViewModel condutorViewModel)
+        [HttpPost("adicionarCondutor")]        
+        public async Task<ActionResult<CondutorViewModel>> CadastrarCondutor(CondutorViewModel condutorViewModel)
         {
-            if (!ModelState.IsValid) return BadRequest("O formulário possui dados inválidos");
-
-            var condutor = await _condutorAppService.ObterCondutorPorCPF(condutorViewModel.CPF);
-
-            if (condutor != null)
-            {
-                if (condutor.CPF == condutorViewModel.CPF || condutor.CNH == condutorViewModel.CNH)
-                {
-                    return BadRequest("CPF ou CNH já cadastrados");
-                }                     
-            } 
+            if (!ModelState.IsValid) return CustomResponse(ModelState);           
 
             await _condutorAppService.AdicionarCondutor(condutorViewModel);
-
-            return condutorViewModel;
+           
+            return CustomResponse(condutorViewModel);
         }
 
-        [HttpPut]
-        [Route("atualizarCondutor")]
-        public async Task<ActionResult<CondutorViewModel>> Put(CondutorViewModel condutorViewModel)
+        [HttpPut("atualizarCondutor/{id:guid}")]        
+        public async Task<ActionResult<CondutorViewModel>> AtualizarCondutor(Guid id, CondutorViewModel condutorViewModel)
         {
-            if (!ModelState.IsValid) return BadRequest("O formulário possui dados inválidos");
-
-            var condutor = await _condutorAppService.ObterCondutorPorId(condutorViewModel.Id);
-
-            if (condutor == null)
+            if (id != condutorViewModel.Id)
             {
-                return NotFound("Não foi possível localizar o condutor");
+                NotificarErro("O id informado não é o mesmo que foi passado na query");
+                return CustomResponse(condutorViewModel);
             }
-            else
-            {
-                if (condutor.CPF == condutorViewModel.CPF) return BadRequest("CPF já cadastrado");
-                if (condutor.CNH == condutorViewModel.CNH) return BadRequest("CNH já cadastrada");
-            }
+
+            if (!ModelState.IsValid) return CustomResponse(ModelState);            
 
             await _condutorAppService.AtualizarCondutor(condutorViewModel);
 
-            return condutorViewModel;
+            return CustomResponse(condutorViewModel);
         }
 
-        [HttpDelete]
-        [Route("excluirCondutor/{id:guid}")]
-        public async Task<ActionResult<CondutorViewModel>> Delete(Guid id)
+        [HttpDelete("excluirCondutor/{id:guid}")]        
+        public async Task<ActionResult<CondutorViewModel>> ExcluirCondutor(Guid id)
         {
             var condutor = await _condutorAppService.ObterCondutorPorId(id);
 
-            if (condutor == null) return NotFound("Não foi possível localizar o condutor");            
+            if (condutor == null) 
+            {
+                CondutorNulo();
+                return CustomResponse(condutor);
+            }            
 
             await _condutorAppService.ExcluirCondutor(condutor);
 
-            return condutor;
+            return CustomResponse(condutor);
+        }
+
+        private void CondutorNulo()
+        {
+            NotificarErro("Não foi possível localizar o condutor");            
         }
     }
 }

@@ -1,6 +1,7 @@
-﻿using Confitec.Veiculo.Application.Services;
+﻿using Confitec.Condutor.Application.Services;
+using Confitec.Core.Messages;
+using Confitec.Veiculo.Application.Services;
 using Confitec.Veiculo.Application.ViewModels;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,108 +10,105 @@ using System.Threading.Tasks;
 namespace Confitec.WebApp.API.Controllers
 {
     [Route("v1/veiculo")]
-    public class VeiculoController : ControllerBase
+    public class VeiculoController : MainController
     {
         public readonly IVeiculoAppService _veiculoAppService;
+        public readonly ICondutorAppService _condutorAppService;
 
-        public VeiculoController(IVeiculoAppService veiculoAppService)
+        public VeiculoController(IVeiculoAppService veiculoAppService, ICondutorAppService condutorAppService, INotificador notificador) : base(notificador)
         {
             _veiculoAppService = veiculoAppService;
+            _condutorAppService = condutorAppService;
         }
 
-        [HttpGet]
-        [Route("obterTodos")]
-        //[Authorize]
-        public async Task<IEnumerable<VeiculoViewModel>> Get()
+        [HttpGet("obterTodos")]        
+        public async Task<IEnumerable<VeiculoViewModel>> ObterTodosVeiculos()
         {
             var veiculos = await _veiculoAppService.ObterTodosVeiculos();
             return veiculos;
         }
 
-        [HttpGet]
-        [Route("obterPorCPF/{cpf}")]
-        public async Task<IEnumerable<VeiculoViewModel>> GetByVeiculosPorCPF(string cpf)
+        [HttpGet("obterPorCPF/{cpf}")]        
+        public async Task<ActionResult<IEnumerable<VeiculoViewModel>>> ObterVeiculosPorCPF(string cpf)
         {
             var veiculos = await _veiculoAppService.ObterVeiculosPorCPF(cpf);
 
-            if (veiculos == null) return (IEnumerable<VeiculoViewModel>)NotFound("Não foi possível localizar os veículos para o CPF informado");
-
-            return veiculos;
+            if (veiculos == null)
+            {
+                NotificarErro("Não foi possível localizar os veículos para o CPF informado");
+                return CustomResponse();
+            } 
+            return CustomResponse(veiculos);
         }
 
-        [HttpGet]
-        [Route("obterPorId/{id:guid}")]
-        public async Task<ActionResult<VeiculoViewModel>> GetById(Guid id)
+        [HttpGet("obterPorId/{id:guid}")]        
+        public async Task<ActionResult<VeiculoViewModel>> ObterVeiculoPorId(Guid id)
         {
             var veiculo = await _veiculoAppService.ObterVeiculoPorId(id);
 
-            if (veiculo == null) return NotFound("Não foi possível localizar o veículo");
+            if (veiculo == null) VeiculoNulo();
 
-            return veiculo;
+            return CustomResponse(veiculo);
         }
 
-        [HttpGet]
-        [Route("obterPorPlaca/{placa}")]
-        public async Task<ActionResult<VeiculoViewModel>> GetByCPF(string placa)
+        [HttpPost("adicionarVeiculo")]        
+        public async Task<ActionResult<VeiculoViewModel>> CadastrarVeiculo(VeiculoViewModel veiculoViewModel)
         {
-            var veiculo = await _veiculoAppService.ObterVeiculoPorPlaca(placa);
+            var condutor = await _condutorAppService.ObterCondutorPorId(veiculoViewModel.IdCondutor);
 
-            if (veiculo == null) return NotFound("Não foi possível localizar o veículo");
-
-            return veiculo;
-        }
-
-        [HttpPost]
-        [Route("adicionarVeiculo")]
-        public async Task<ActionResult<VeiculoViewModel>> Post(VeiculoViewModel veiculoViewModel)
-        {
-            if (!ModelState.IsValid) return BadRequest("O formulário possui dados inválidos");
-
-            var veiculo = await _veiculoAppService.ObterVeiculoPorPlaca(veiculoViewModel.Placa);
-
-            if(veiculo != null)
+            if (condutor == null)
             {
-                if (veiculo.Placa == veiculoViewModel.Placa) return BadRequest("Placa já cadastrado");
+                NotificarErro("Não foi possível localizar o registro do condutor informado");
+                return CustomResponse(veiculoViewModel);
             }
+            else if (condutor.CPF != veiculoViewModel.CPFCondutor)
+            {
+                NotificarErro("CPF do condutor informado é diferente do cadastro");
+                return CustomResponse(veiculoViewModel);
+            }
+
+            if (!ModelState.IsValid) return CustomResponse(ModelState);            
 
             await _veiculoAppService.AdicionarVeiculo(veiculoViewModel);
 
-            return veiculoViewModel;
+            return CustomResponse(veiculoViewModel);
         }
 
-        [HttpPut]
-        [Route("atualizarVeiculo")]
-        public async Task<ActionResult<VeiculoViewModel>> Put(VeiculoViewModel veiculoViewModel)
+        [HttpPut("atualizarVeiculo/{id:guid}")]        
+        public async Task<ActionResult<VeiculoViewModel>> AtualizarVeiculo(Guid id, VeiculoViewModel veiculoViewModel)
         {
-            if (!ModelState.IsValid) return BadRequest("O formulário possui dados inválidos");
-
-            var veiculo = await _veiculoAppService.ObterVeiculoPorId(veiculoViewModel.Id);
-
-            if (veiculo == null)
+            if (id != veiculoViewModel.Id)
             {
-                return NotFound("Não foi possível localizar o veículo");
+                NotificarErro("O id informado não é o mesmo que foi passado na query");
+                return CustomResponse(veiculoViewModel);
             }
-            else 
-            {
-                if (veiculo.Placa == veiculoViewModel.Placa) return BadRequest("Placa já cadastrado");
-            }
+
+            if (!ModelState.IsValid) return CustomResponse(ModelState);            
 
             await _veiculoAppService.AtualizarVeiculo(veiculoViewModel);
 
-            return veiculoViewModel;
+            return CustomResponse(veiculoViewModel);
         }
 
-        [HttpDelete]
-        [Route("excluirVeiculo/{id:guid}")]
-        public async Task<ActionResult<VeiculoViewModel>> Delete(Guid id)
-        {
-            if (!ModelState.IsValid) return BadRequest("O formulário possui dados inválidos");
-
+        [HttpDelete("excluirVeiculo/{id:guid}")]        
+        public async Task<ActionResult<VeiculoViewModel>> ExcluirVeiculo(Guid id)
+        { 
             var veiculo = await _veiculoAppService.ObterVeiculoPorId(id);
+
+            if (veiculo == null)
+            {
+                VeiculoNulo();
+                return CustomResponse(veiculo);
+            }
 
             await _veiculoAppService.ExcluirVeiculo(veiculo);
 
-            return veiculo;
+            return CustomResponse(veiculo);
+        }
+
+        private void VeiculoNulo()
+        {
+            NotificarErro("Não foi possível localizar o veículo");
         }
     }
 }

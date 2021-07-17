@@ -29,15 +29,15 @@ namespace Confitec.Veiculo.Data.Repository
             return await _context.Veiculos.AsNoTracking().Where(v => v.CPFCondutor == cpf).ToListAsync();
         }
 
+        public async Task<IEnumerable<Domain.Veiculo>> ObterPorPlaca(string placa)
+        {
+            return await _context.Veiculos.AsNoTracking().Where(v => v.Placa == placa).ToListAsync();
+        }
+
         public async Task<Domain.Veiculo> ObterPorId(Guid id)
         {
             return await _context.Veiculos.AsNoTracking().FirstOrDefaultAsync(v => v.Id == id);
-        }
-
-        public async Task<Domain.Veiculo> ObterPorPlaca(string placa)
-        {
-            return await _context.Veiculos.AsNoTracking().FirstOrDefaultAsync(v => v.Placa == placa);
-        }
+        }        
 
         public void Adicionar(Domain.Veiculo condutor)
         {

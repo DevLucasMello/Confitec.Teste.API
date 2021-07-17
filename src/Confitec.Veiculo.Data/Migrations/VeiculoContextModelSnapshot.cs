@@ -39,6 +39,11 @@ namespace Confitec.Veiculo.Data.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("Cor");
 
+                    b.Property<string>("IdCondutor")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("IdCondutor");
+
                     b.Property<string>("Marca")
                         .IsRequired()
                         .HasColumnType("varchar(50)")
