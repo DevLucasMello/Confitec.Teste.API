@@ -1,9 +1,0 @@
-C:\dev\Confitec\src\Confitec.Cadastro.Domain\bin\Debug\netcoreapp3.1\Confitec.Cadastro.Domain.deps.json
-C:\dev\Confitec\src\Confitec.Cadastro.Domain\bin\Debug\netcoreapp3.1\Confitec.Cadastro.Domain.dll
-C:\dev\Confitec\src\Confitec.Cadastro.Domain\bin\Debug\netcoreapp3.1\Confitec.Cadastro.Domain.pdb
-C:\dev\Confitec\src\Confitec.Cadastro.Domain\obj\Debug\netcoreapp3.1\Confitec.Cadastro.Domain.csprojAssemblyReference.cache
-C:\dev\Confitec\src\Confitec.Cadastro.Domain\obj\Debug\netcoreapp3.1\Confitec.Cadastro.Domain.AssemblyInfoInputs.cache
-C:\dev\Confitec\src\Confitec.Cadastro.Domain\obj\Debug\netcoreapp3.1\Confitec.Cadastro.Domain.AssemblyInfo.cs
-C:\dev\Confitec\src\Confitec.Cadastro.Domain\obj\Debug\netcoreapp3.1\Confitec.Cadastro.Domain.csproj.CoreCompileInputs.cache
-C:\dev\Confitec\src\Confitec.Cadastro.Domain\obj\Debug\netcoreapp3.1\Confitec.Cadastro.Domain.dll
-C:\dev\Confitec\src\Confitec.Cadastro.Domain\obj\Debug\netcoreapp3.1\Confitec.Cadastro.Domain.pdb

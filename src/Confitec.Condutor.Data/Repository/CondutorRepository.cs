@@ -22,12 +22,7 @@ namespace Confitec.Condutor.Data.Repository
         public async Task<IEnumerable<Domain.Condutor>> ObterTodos()
         {
             return await _context.Condutores.AsNoTracking().ToListAsync();
-        }
-
-        public async Task<IEnumerable<Domain.Condutor>> ObterPorPlaca(string placa)
-        {
-            return await _context.Condutores.AsNoTracking().Where(c => c.Placa == placa).ToListAsync();
-        }
+        }        
 
         public async Task<Domain.Condutor> ObterPorId(Guid id)
         {

@@ -17,4 +17,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Confitec.Core\Confitec.Core.csproj" />
+    <ProjectReference Include="..\Confitec.Veiculo.Domain\Confitec.Veiculo.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

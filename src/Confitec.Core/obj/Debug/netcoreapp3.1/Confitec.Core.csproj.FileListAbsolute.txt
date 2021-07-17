@@ -1,9 +1,9 @@
 C:\dev\Confitec\src\Confitec.Core\bin\Debug\netcoreapp3.1\Confitec.Core.deps.json
 C:\dev\Confitec\src\Confitec.Core\bin\Debug\netcoreapp3.1\Confitec.Core.dll
 C:\dev\Confitec\src\Confitec.Core\bin\Debug\netcoreapp3.1\Confitec.Core.pdb
-C:\dev\Confitec\src\Confitec.Core\obj\Debug\netcoreapp3.1\Confitec.Core.csprojAssemblyReference.cache
 C:\dev\Confitec\src\Confitec.Core\obj\Debug\netcoreapp3.1\Confitec.Core.AssemblyInfoInputs.cache
 C:\dev\Confitec\src\Confitec.Core\obj\Debug\netcoreapp3.1\Confitec.Core.AssemblyInfo.cs
 C:\dev\Confitec\src\Confitec.Core\obj\Debug\netcoreapp3.1\Confitec.Core.csproj.CoreCompileInputs.cache
 C:\dev\Confitec\src\Confitec.Core\obj\Debug\netcoreapp3.1\Confitec.Core.dll
 C:\dev\Confitec\src\Confitec.Core\obj\Debug\netcoreapp3.1\Confitec.Core.pdb
+C:\dev\Confitec\src\Confitec.Core\obj\Debug\netcoreapp3.1\Confitec.Core.csprojAssemblyReference.cache

@@ -1,18 +1,21 @@
 ﻿using AutoMapper;
 using Confitec.Condutor.Application.ViewModels;
 using Confitec.Condutor.Domain;
+using Confitec.Core.Messages;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using static Confitec.Condutor.Domain.Condutor;
+using static Confitec.Motorista.Domain.Nome;
 
 namespace Confitec.Condutor.Application.Services
 {
-    public class CondutorAppService : ICondutorAppService
+    public class CondutorAppService : BaseService, ICondutorAppService
     {
         private readonly ICondutorRepository _condutorRepository;
         private readonly IMapper _mapper;
 
-        public CondutorAppService(ICondutorRepository condutorRepository, IMapper mapper)
+        public CondutorAppService(ICondutorRepository condutorRepository, IMapper mapper, INotificador notificador) : base(notificador)
         {
             _condutorRepository = condutorRepository;
             _mapper = mapper;
@@ -21,12 +24,7 @@ namespace Confitec.Condutor.Application.Services
         public async Task<IEnumerable<CondutorViewModel>> ObterTodosCondutores()
         {
             return _mapper.Map<IEnumerable<CondutorViewModel>>(await _condutorRepository.ObterTodos());
-        }
-
-        public async Task<IEnumerable<CondutorViewModel>> ObterCondutoresPorPlaca(string placa)
-        {
-            return _mapper.Map<IEnumerable<CondutorViewModel>>(await _condutorRepository.ObterPorPlaca(placa));
-        }
+        }        
 
         public async Task<CondutorViewModel> ObterCondutorPorId(Guid id)
         {
@@ -38,33 +36,76 @@ namespace Confitec.Condutor.Application.Services
             return _mapper.Map<CondutorViewModel>(await _condutorRepository.ObterPorCPF(cpf));
         }
 
-        public async Task AdicionarCondutor(CondutorViewModel condutorViewModel)
+        public async Task<bool> AdicionarCondutor(CondutorViewModel condutorViewModel)
         {
             var condutor = _mapper.Map<Domain.Condutor>(condutorViewModel);
+
+            var validarCondutor = !ExecutarValidacao(new CondutorValidation(), condutor);
+            var validarCondutorNome = !ExecutarValidacao(new NomeValidation(), condutor.Nome);
+
+            if (validarCondutor || validarCondutorNome) return false;
+
+            if (await VerificarCnhCpf(condutorViewModel)) return false;
+
             _condutorRepository.Adicionar(condutor);
 
-            await _condutorRepository.UnitOfWork.Commit();
+            return await _condutorRepository.UnitOfWork.Commit();            
         }
 
-        public async Task AtualizarCondutor(CondutorViewModel condutorViewModel)
+        public async Task<bool> AtualizarCondutor(CondutorViewModel condutorViewModel)
         {
             var condutor = _mapper.Map<Domain.Condutor>(condutorViewModel);
+            var validarCondutor = !ExecutarValidacao(new CondutorValidation(), condutor);
+            var validarCondutorNome = !ExecutarValidacao(new NomeValidation(), condutor.Nome);
+
+            if (validarCondutor || validarCondutorNome) return false;
+
+            if (await VerificarCnhCpf(condutorViewModel)) return false;
+
             _condutorRepository.Atualizar(condutor);
 
-            await _condutorRepository.UnitOfWork.Commit();
+            return await _condutorRepository.UnitOfWork.Commit();            
         }        
 
-        public async Task ExcluirCondutor(CondutorViewModel condutorViewModel)
-        {
+        public async Task<bool> ExcluirCondutor(CondutorViewModel condutorViewModel)
+        {            
             var condutor = _mapper.Map<Domain.Condutor>(condutorViewModel);
             _condutorRepository.Excluir(condutor);
 
-            await _condutorRepository.UnitOfWork.Commit();
+            return await _condutorRepository.UnitOfWork.Commit();           
         }                       
 
         public void Dispose()
         {
             _condutorRepository?.Dispose();
+        }
+
+        private async Task<bool> VerificarCnhCpf(CondutorViewModel condutorViewModel)
+        {
+            var condutores = await ObterTodosCondutores();
+            var cpf = false;
+            var cnh = false;
+
+            foreach(var condutor in condutores)
+            { 
+                if (condutor.Id != condutorViewModel.Id)
+                {
+                    if (condutor.CPF == condutorViewModel.CPF)
+                    {
+                        Notificar("CPF já cadastrado");
+                        cpf = true;
+                    }
+                    if (condutor.CNH == condutorViewModel.CNH)
+                    {
+                        Notificar("CNH já cadastrada");
+                        cnh = true;
+                    }
+                }                                               
+            }
+
+            if (cpf || cnh) return true;
+            
+            return false;
         }
     }
 }

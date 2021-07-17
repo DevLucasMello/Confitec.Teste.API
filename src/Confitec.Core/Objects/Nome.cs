@@ -30,7 +30,7 @@ namespace Confitec.Motorista.Domain
 
         public override bool EhValido()
         {
-            ValidationResult = new NomeValidation().Validate(this);
+            ValidationResult = new NomeValidation().Validate(this);            
             return ValidationResult.IsValid;
         }
 

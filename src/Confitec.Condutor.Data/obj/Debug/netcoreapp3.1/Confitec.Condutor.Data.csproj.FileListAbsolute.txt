@@ -10,3 +10,8 @@ C:\dev\Confitec\src\Confitec.Condutor.Data\obj\Debug\netcoreapp3.1\Confitec.Cond
 C:\dev\Confitec\src\Confitec.Condutor.Data\obj\Debug\netcoreapp3.1\Confitec.Condutor.Data.dll
 C:\dev\Confitec\src\Confitec.Condutor.Data\obj\Debug\netcoreapp3.1\Confitec.Condutor.Data.pdb
 C:\dev\Confitec\src\Confitec.Condutor.Data\obj\Debug\netcoreapp3.1\Confitec.Condutor.Data.genruntimeconfig.cache
+C:\dev\Confitec\src\Confitec.Condutor.Data\bin\Debug\netcoreapp3.1\Confitec.Condutor.Domain.dll
+C:\dev\Confitec\src\Confitec.Condutor.Data\bin\Debug\netcoreapp3.1\Confitec.Core.dll
+C:\dev\Confitec\src\Confitec.Condutor.Data\bin\Debug\netcoreapp3.1\Confitec.Condutor.Domain.pdb
+C:\dev\Confitec\src\Confitec.Condutor.Data\bin\Debug\netcoreapp3.1\Confitec.Core.pdb
+C:\dev\Confitec\src\Confitec.Condutor.Data\obj\Debug\netcoreapp3.1\Confitec.Condutor.Data.csproj.CopyComplete

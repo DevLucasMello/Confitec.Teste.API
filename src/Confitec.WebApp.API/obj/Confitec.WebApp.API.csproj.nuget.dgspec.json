@@ -1,0 +1,608 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\dev\\Confitec\\src\\Confitec.WebApp.API\\Confitec.WebApp.API.csproj": {}
+  },
+  "projects": {
+    "C:\\dev\\Confitec\\src\\Confitec.Condutor.Application\\Confitec.Condutor.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\Confitec\\src\\Confitec.Condutor.Application\\Confitec.Condutor.Application.csproj",
+        "projectName": "Confitec.Condutor.Application",
+        "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Condutor.Application\\Confitec.Condutor.Application.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\Confitec\\src\\Confitec.Condutor.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\dev\\Confitec\\src\\Confitec.Condutor.Data\\Confitec.Condutor.Data.csproj": {
+                "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Condutor.Data\\Confitec.Condutor.Data.csproj"
+              },
+              "C:\\dev\\Confitec\\src\\Confitec.Condutor.Domain\\Confitec.Condutor.Domain.csproj": {
+                "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Condutor.Domain\\Confitec.Condutor.Domain.csproj"
+              },
+              "C:\\dev\\Confitec\\src\\Confitec.Core\\Confitec.Core.csproj": {
+                "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Core\\Confitec.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\Confitec\\src\\Confitec.Condutor.Data\\Confitec.Condutor.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\Confitec\\src\\Confitec.Condutor.Data\\Confitec.Condutor.Data.csproj",
+        "projectName": "Confitec.Condutor.Data",
+        "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Condutor.Data\\Confitec.Condutor.Data.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\Confitec\\src\\Confitec.Condutor.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\dev\\Confitec\\src\\Confitec.Condutor.Domain\\Confitec.Condutor.Domain.csproj": {
+                "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Condutor.Domain\\Confitec.Condutor.Domain.csproj"
+              },
+              "C:\\dev\\Confitec\\src\\Confitec.Core\\Confitec.Core.csproj": {
+                "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Core\\Confitec.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\Confitec\\src\\Confitec.Condutor.Domain\\Confitec.Condutor.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\Confitec\\src\\Confitec.Condutor.Domain\\Confitec.Condutor.Domain.csproj",
+        "projectName": "Confitec.Condutor.Domain",
+        "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Condutor.Domain\\Confitec.Condutor.Domain.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\Confitec\\src\\Confitec.Condutor.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\dev\\Confitec\\src\\Confitec.Core\\Confitec.Core.csproj": {
+                "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Core\\Confitec.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\Confitec\\src\\Confitec.Core\\Confitec.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\Confitec\\src\\Confitec.Core\\Confitec.Core.csproj",
+        "projectName": "Confitec.Core",
+        "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Core\\Confitec.Core.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\Confitec\\src\\Confitec.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Application\\Confitec.Veiculo.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Application\\Confitec.Veiculo.Application.csproj",
+        "projectName": "Confitec.Veiculo.Application",
+        "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Application\\Confitec.Veiculo.Application.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\dev\\Confitec\\src\\Confitec.Core\\Confitec.Core.csproj": {
+                "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Core\\Confitec.Core.csproj"
+              },
+              "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Data\\Confitec.Veiculo.Data.csproj": {
+                "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Data\\Confitec.Veiculo.Data.csproj"
+              },
+              "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Domain\\Confitec.Veiculo.Domain.csproj": {
+                "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Domain\\Confitec.Veiculo.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Data\\Confitec.Veiculo.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Data\\Confitec.Veiculo.Data.csproj",
+        "projectName": "Confitec.Veiculo.Data",
+        "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Data\\Confitec.Veiculo.Data.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\dev\\Confitec\\src\\Confitec.Core\\Confitec.Core.csproj": {
+                "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Core\\Confitec.Core.csproj"
+              },
+              "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Domain\\Confitec.Veiculo.Domain.csproj": {
+                "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Domain\\Confitec.Veiculo.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Domain\\Confitec.Veiculo.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Domain\\Confitec.Veiculo.Domain.csproj",
+        "projectName": "Confitec.Veiculo.Domain",
+        "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Domain\\Confitec.Veiculo.Domain.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\dev\\Confitec\\src\\Confitec.Core\\Confitec.Core.csproj": {
+                "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Core\\Confitec.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\Confitec\\src\\Confitec.WebApp.API\\Confitec.WebApp.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\Confitec\\src\\Confitec.WebApp.API\\Confitec.WebApp.API.csproj",
+        "projectName": "Confitec.WebApp.API",
+        "projectPath": "C:\\dev\\Confitec\\src\\Confitec.WebApp.API\\Confitec.WebApp.API.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\Confitec\\src\\Confitec.WebApp.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\dev\\Confitec\\src\\Confitec.Condutor.Application\\Confitec.Condutor.Application.csproj": {
+                "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Condutor.Application\\Confitec.Condutor.Application.csproj"
+              },
+              "C:\\dev\\Confitec\\src\\Confitec.Condutor.Data\\Confitec.Condutor.Data.csproj": {
+                "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Condutor.Data\\Confitec.Condutor.Data.csproj"
+              },
+              "C:\\dev\\Confitec\\src\\Confitec.Condutor.Domain\\Confitec.Condutor.Domain.csproj": {
+                "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Condutor.Domain\\Confitec.Condutor.Domain.csproj"
+              },
+              "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Application\\Confitec.Veiculo.Application.csproj": {
+                "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Application\\Confitec.Veiculo.Application.csproj"
+              },
+              "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Data\\Confitec.Veiculo.Data.csproj": {
+                "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Data\\Confitec.Veiculo.Data.csproj"
+              },
+              "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Domain\\Confitec.Veiculo.Domain.csproj": {
+                "projectPath": "C:\\dev\\Confitec\\src\\Confitec.Veiculo.Domain\\Confitec.Veiculo.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

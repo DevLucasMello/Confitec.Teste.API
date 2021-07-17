@@ -11,29 +11,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{DD3188FE-D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Condutor", "Condutor", "{2312AC0F-F325-4647-BA1B-AF0FAC48CB1D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cadastro", "Cadastro", "{0B498028-B788-4B92-B477-5880BA46A55D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Veiculo", "Veiculo", "{357FABC2-C5F9-47A2-9496-5E9C8BE0075C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confitec.Core", "src\Confitec.Core\Confitec.Core.csproj", "{362C48AE-626B-4D6A-A315-C197448F7123}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confitec.Cadastro.Application", "src\Confitec.Cadastro.Application\Confitec.Cadastro.Application.csproj", "{93B35698-BA92-477F-BF5D-986C49B957D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confitec.Condutor.Domain", "src\Confitec.Condutor.Domain\Confitec.Condutor.Domain.csproj", "{C2A046A2-7D10-4389-804F-BE5D7268B185}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confitec.Cadastro.Data", "src\Confitec.Cadastro.Data\Confitec.Cadastro.Data.csproj", "{6A0D6DA4-A520-43F2-8824-D3CF0437EFF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confitec.Condutor.Application", "src\Confitec.Condutor.Application\Confitec.Condutor.Application.csproj", "{78464ED7-9D31-461B-815D-7A0CE2F2FF01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confitec.Cadastro.Domain", "src\Confitec.Cadastro.Domain\Confitec.Cadastro.Domain.csproj", "{0F6C7B7C-C381-4886-B619-9615DAFFAB47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confitec.Condutor.Data", "src\Confitec.Condutor.Data\Confitec.Condutor.Data.csproj", "{D62B0783-FE37-4CE7-A09E-33D710A64F9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confitec.Condutor.Domain", "src\Confitec.Condutor.Domain\Confitec.Condutor.Domain.csproj", "{C2A046A2-7D10-4389-804F-BE5D7268B185}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confitec.Veiculo.Domain", "src\Confitec.Veiculo.Domain\Confitec.Veiculo.Domain.csproj", "{D488298E-59C3-4B5D-AA34-04A2DE9634E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confitec.Condutor.Application", "src\Confitec.Condutor.Application\Confitec.Condutor.Application.csproj", "{78464ED7-9D31-461B-815D-7A0CE2F2FF01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confitec.Veiculo.Data", "src\Confitec.Veiculo.Data\Confitec.Veiculo.Data.csproj", "{838D8454-E7C3-44E6-9104-2CEAC2E163BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confitec.Condutor.Data", "src\Confitec.Condutor.Data\Confitec.Condutor.Data.csproj", "{D62B0783-FE37-4CE7-A09E-33D710A64F9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confitec.Veiculo.Application", "src\Confitec.Veiculo.Application\Confitec.Veiculo.Application.csproj", "{AFC39519-C0D5-4BA1-8B9F-C39663B1DC2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confitec.Veiculo.Domain", "src\Confitec.Veiculo.Domain\Confitec.Veiculo.Domain.csproj", "{D488298E-59C3-4B5D-AA34-04A2DE9634E2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confitec.Veiculo.Data", "src\Confitec.Veiculo.Data\Confitec.Veiculo.Data.csproj", "{838D8454-E7C3-44E6-9104-2CEAC2E163BC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confitec.Veiculo.Application", "src\Confitec.Veiculo.Application\Confitec.Veiculo.Application.csproj", "{AFC39519-C0D5-4BA1-8B9F-C39663B1DC2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confitec.WebApp.API", "src\Confitec.WebApp.API\Confitec.WebApp.API.csproj", "{38E51218-4FF5-4301-9459-C6257DC739DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,18 +39,6 @@ Global
 		{362C48AE-626B-4D6A-A315-C197448F7123}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{362C48AE-626B-4D6A-A315-C197448F7123}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{362C48AE-626B-4D6A-A315-C197448F7123}.Release|Any CPU.Build.0 = Release|Any CPU
-		{93B35698-BA92-477F-BF5D-986C49B957D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{93B35698-BA92-477F-BF5D-986C49B957D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{93B35698-BA92-477F-BF5D-986C49B957D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{93B35698-BA92-477F-BF5D-986C49B957D6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A0D6DA4-A520-43F2-8824-D3CF0437EFF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A0D6DA4-A520-43F2-8824-D3CF0437EFF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A0D6DA4-A520-43F2-8824-D3CF0437EFF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A0D6DA4-A520-43F2-8824-D3CF0437EFF0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0F6C7B7C-C381-4886-B619-9615DAFFAB47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F6C7B7C-C381-4886-B619-9615DAFFAB47}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F6C7B7C-C381-4886-B619-9615DAFFAB47}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F6C7B7C-C381-4886-B619-9615DAFFAB47}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C2A046A2-7D10-4389-804F-BE5D7268B185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C2A046A2-7D10-4389-804F-BE5D7268B185}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2A046A2-7D10-4389-804F-BE5D7268B185}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -81,6 +63,10 @@ Global
 		{AFC39519-C0D5-4BA1-8B9F-C39663B1DC2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFC39519-C0D5-4BA1-8B9F-C39663B1DC2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFC39519-C0D5-4BA1-8B9F-C39663B1DC2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38E51218-4FF5-4301-9459-C6257DC739DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38E51218-4FF5-4301-9459-C6257DC739DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38E51218-4FF5-4301-9459-C6257DC739DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38E51218-4FF5-4301-9459-C6257DC739DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,18 +74,15 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{DD3188FE-D865-4BD1-9713-35D29B672A36} = {A2A74D98-FFB1-4DE0-BEE8-70330CCC6AF4}
 		{2312AC0F-F325-4647-BA1B-AF0FAC48CB1D} = {A2A74D98-FFB1-4DE0-BEE8-70330CCC6AF4}
-		{0B498028-B788-4B92-B477-5880BA46A55D} = {A2A74D98-FFB1-4DE0-BEE8-70330CCC6AF4}
 		{357FABC2-C5F9-47A2-9496-5E9C8BE0075C} = {A2A74D98-FFB1-4DE0-BEE8-70330CCC6AF4}
 		{362C48AE-626B-4D6A-A315-C197448F7123} = {DD3188FE-D865-4BD1-9713-35D29B672A36}
-		{93B35698-BA92-477F-BF5D-986C49B957D6} = {0B498028-B788-4B92-B477-5880BA46A55D}
-		{6A0D6DA4-A520-43F2-8824-D3CF0437EFF0} = {0B498028-B788-4B92-B477-5880BA46A55D}
-		{0F6C7B7C-C381-4886-B619-9615DAFFAB47} = {0B498028-B788-4B92-B477-5880BA46A55D}
 		{C2A046A2-7D10-4389-804F-BE5D7268B185} = {2312AC0F-F325-4647-BA1B-AF0FAC48CB1D}
 		{78464ED7-9D31-461B-815D-7A0CE2F2FF01} = {2312AC0F-F325-4647-BA1B-AF0FAC48CB1D}
 		{D62B0783-FE37-4CE7-A09E-33D710A64F9C} = {2312AC0F-F325-4647-BA1B-AF0FAC48CB1D}
 		{D488298E-59C3-4B5D-AA34-04A2DE9634E2} = {357FABC2-C5F9-47A2-9496-5E9C8BE0075C}
 		{838D8454-E7C3-44E6-9104-2CEAC2E163BC} = {357FABC2-C5F9-47A2-9496-5E9C8BE0075C}
 		{AFC39519-C0D5-4BA1-8B9F-C39663B1DC2E} = {357FABC2-C5F9-47A2-9496-5E9C8BE0075C}
+		{38E51218-4FF5-4301-9459-C6257DC739DE} = {467EF804-F642-474B-BE2F-1EFC3B7D3C3B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {698AACE5-60BB-4D6A-9B52-73A5DBBE9F8E}

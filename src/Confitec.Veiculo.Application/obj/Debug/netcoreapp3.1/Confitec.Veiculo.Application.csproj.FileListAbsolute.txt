@@ -7,3 +7,10 @@ C:\dev\Confitec\src\Confitec.Veiculo.Application\obj\Debug\netcoreapp3.1\Confite
 C:\dev\Confitec\src\Confitec.Veiculo.Application\obj\Debug\netcoreapp3.1\Confitec.Veiculo.Application.csproj.CoreCompileInputs.cache
 C:\dev\Confitec\src\Confitec.Veiculo.Application\obj\Debug\netcoreapp3.1\Confitec.Veiculo.Application.dll
 C:\dev\Confitec\src\Confitec.Veiculo.Application\obj\Debug\netcoreapp3.1\Confitec.Veiculo.Application.pdb
+C:\dev\Confitec\src\Confitec.Veiculo.Application\bin\Debug\netcoreapp3.1\Confitec.Core.dll
+C:\dev\Confitec\src\Confitec.Veiculo.Application\bin\Debug\netcoreapp3.1\Confitec.Veiculo.Data.dll
+C:\dev\Confitec\src\Confitec.Veiculo.Application\bin\Debug\netcoreapp3.1\Confitec.Veiculo.Domain.dll
+C:\dev\Confitec\src\Confitec.Veiculo.Application\bin\Debug\netcoreapp3.1\Confitec.Core.pdb
+C:\dev\Confitec\src\Confitec.Veiculo.Application\bin\Debug\netcoreapp3.1\Confitec.Veiculo.Data.pdb
+C:\dev\Confitec\src\Confitec.Veiculo.Application\bin\Debug\netcoreapp3.1\Confitec.Veiculo.Domain.pdb
+C:\dev\Confitec\src\Confitec.Veiculo.Application\obj\Debug\netcoreapp3.1\Confitec.Veiculo.Application.csproj.CopyComplete
