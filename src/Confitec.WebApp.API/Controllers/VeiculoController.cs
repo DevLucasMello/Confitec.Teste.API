@@ -2,6 +2,7 @@
 using Confitec.Core.Messages;
 using Confitec.Veiculo.Application.Services;
 using Confitec.Veiculo.Application.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,8 @@ using System.Threading.Tasks;
 
 namespace Confitec.WebApp.API.Controllers
 {
-    [Route("v1/veiculo")]
+    [Authorize]
+    [Route("api/veiculo")]
     public class VeiculoController : MainController
     {
         public readonly IVeiculoAppService _veiculoAppService;

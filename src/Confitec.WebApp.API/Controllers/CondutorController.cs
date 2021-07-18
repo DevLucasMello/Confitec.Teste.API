@@ -2,6 +2,7 @@
 using Confitec.Condutor.Application.ViewModels;
 using Confitec.Core.Messages;
 using Confitec.Veiculo.Application.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,8 @@ using System.Threading.Tasks;
 
 namespace Confitec.WebApp.API.Controllers
 {
-    [Route("v1/condutor")]
+    [Authorize]
+    [Route("api/condutor")]
     public class CondutorController : MainController
     {
         public readonly ICondutorAppService _condutorAppService;
