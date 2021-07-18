@@ -55,16 +55,26 @@ namespace Confitec.WebApp.API.Controllers
         public async Task<ActionResult<VeiculoViewModel>> CadastrarVeiculo(VeiculoViewModel veiculoViewModel)
         {
             var condutor = await _condutorAppService.ObterCondutorPorId(veiculoViewModel.IdCondutor);
+            var veiculos = await _veiculoAppService.ObterVeiculosPorCPF(veiculoViewModel.CPFCondutor);
 
             if (condutor == null)
             {
-                NotificarErro("Não foi possível localizar o registro do condutor informado");
+                CondutorNulo();
                 return CustomResponse(veiculoViewModel);
             }
             else if (condutor.CPF != veiculoViewModel.CPFCondutor)
             {
-                NotificarErro("CPF do condutor informado é diferente do cadastro");
+                CpfDiferente();
                 return CustomResponse(veiculoViewModel);
+            }
+            
+            foreach (var veiculo in veiculos)
+            {
+                if (veiculo.Placa == veiculoViewModel.Placa)
+                {
+                    VeiculoJaCadastrado();
+                    return CustomResponse(veiculoViewModel);
+                }
             }
 
             if (!ModelState.IsValid) return CustomResponse(ModelState);            
@@ -81,6 +91,29 @@ namespace Confitec.WebApp.API.Controllers
             {
                 NotificarErro("O id informado não é o mesmo que foi passado na query");
                 return CustomResponse(veiculoViewModel);
+            }
+
+            var condutor = await _condutorAppService.ObterCondutorPorId(id);
+            var veiculos = await _veiculoAppService.ObterVeiculosPorCPF(veiculoViewModel.CPFCondutor);
+
+            if (condutor == null)
+            {
+                CondutorNulo();
+                return CustomResponse(veiculoViewModel);
+            }
+            else if (condutor.CPF != veiculoViewModel.CPFCondutor)
+            {
+                CpfDiferente();
+                return CustomResponse(veiculoViewModel);
+            }
+
+            foreach (var veiculo in veiculos)
+            {
+                if (veiculo.Placa == veiculoViewModel.Placa)
+                {
+                    VeiculoJaCadastrado();
+                    return CustomResponse(veiculoViewModel);
+                }
             }
 
             if (!ModelState.IsValid) return CustomResponse(ModelState);            
@@ -109,6 +142,19 @@ namespace Confitec.WebApp.API.Controllers
         private void VeiculoNulo()
         {
             NotificarErro("Não foi possível localizar o veículo");
+        }
+
+        private void CondutorNulo()
+        {
+            NotificarErro("Não foi possível localizar o condutor");
+        }
+        private void CpfDiferente()
+        {
+            NotificarErro("CPF do condutor informado é diferente do cadastro");
+        }
+        private void VeiculoJaCadastrado()
+        {
+            NotificarErro("O condutor já possui este veículo cadastrado");
         }
     }
 }
