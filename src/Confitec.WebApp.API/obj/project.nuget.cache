@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vZ9QWhiu1lztYKp8BcESk3Lp4Ku7zaJgCums4RNlNxWRJYDq8HM9vmyZDCxSj0WmMnIiTAZL/98rt4CTPK/vFQ==",
+  "dgSpecHash": "UY5fDNsw/uWo/YntLtSdb669hZ7dKMLiDUfzWTwfCWzziBE0RpffiVuXI7kaB8VFLTm3WOJc9xco13Ks0U1BeQ==",
   "success": true,
   "projectFilePath": "C:\\dev\\Confitec\\src\\Confitec.WebApp.API\\Confitec.WebApp.API.csproj",
   "expectedPackageFiles": [
@@ -24,6 +24,8 @@
     "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\5.0.7\\microsoft.aspnetcore.identity.entityframeworkcore.5.0.7.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\5.0.8\\microsoft.aspnetcore.identity.ui.5.0.8.nupkg.sha512",
+    "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
+    "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning.apiexplorer\\5.0.0\\microsoft.aspnetcore.mvc.versioning.apiexplorer.5.0.0.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

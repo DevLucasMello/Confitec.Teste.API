@@ -15,7 +15,8 @@ using System.Threading.Tasks;
 
 namespace Confitec.WebApp.API.Controllers
 {
-    [Route("api")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/usuario")]
     public class AuthController : MainController
     {
         private readonly SignInManager<IdentityUser> _signInManager;
@@ -50,10 +51,10 @@ namespace Confitec.WebApp.API.Controllers
                 EmailConfirmed = true
             };            
 
-            var result = await _userManager.CreateAsync(user, registerUser.Password);
+            var result = await _userManager.CreateAsync(user, registerUser.Password);           
 
             if (result.Succeeded)
-            {
+            {               
                 await _signInManager.SignInAsync(user, false);
                 return CustomResponse(await GerarJwt(user.Email));
             }

@@ -12,7 +12,8 @@ using System.Threading.Tasks;
 namespace Confitec.WebApp.API.Controllers
 {
     [Authorize]
-    [Route("api/veiculo")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/veiculo")]
     public class VeiculoController : MainController
     {
         public readonly IVeiculoAppService _veiculoAppService;
@@ -31,7 +32,7 @@ namespace Confitec.WebApp.API.Controllers
             return veiculos;
         }
 
-        [ClaimsAuthorize("Veiculo", "Consultar")]
+        //[ClaimsAuthorize("Veiculo", "Consultar")]
         [HttpGet("obterPorCPF/{cpf}")]        
         public async Task<ActionResult<IEnumerable<VeiculoViewModel>>> ObterVeiculosPorCPF(string cpf)
         {
@@ -45,7 +46,7 @@ namespace Confitec.WebApp.API.Controllers
             return CustomResponse(veiculos);
         }
 
-        [ClaimsAuthorize("Veiculo", "Consultar")]
+        //[ClaimsAuthorize("Veiculo", "Consultar")]
         [HttpGet("obterPorId/{id:guid}")]        
         public async Task<ActionResult<VeiculoViewModel>> ObterVeiculoPorId(Guid id)
         {
@@ -56,7 +57,7 @@ namespace Confitec.WebApp.API.Controllers
             return CustomResponse(veiculo);
         }
 
-        [ClaimsAuthorize("Veiculo", "Adicionar")]
+        //[ClaimsAuthorize("Veiculo", "Adicionar")]
         [HttpPost("adicionarVeiculo")]        
         public async Task<ActionResult<VeiculoViewModel>> CadastrarVeiculo(VeiculoViewModel veiculoViewModel)
         {
@@ -90,7 +91,7 @@ namespace Confitec.WebApp.API.Controllers
             return CustomResponse(veiculoViewModel);
         }
 
-        [ClaimsAuthorize("Veiculo", "Atualizar")]
+        //[ClaimsAuthorize("Veiculo", "Atualizar")]
         [HttpPut("atualizarVeiculo/{id:guid}")]        
         public async Task<ActionResult<VeiculoViewModel>> AtualizarVeiculo(Guid id, VeiculoViewModel veiculoViewModel)
         {
@@ -130,7 +131,7 @@ namespace Confitec.WebApp.API.Controllers
             return CustomResponse(veiculoViewModel);
         }
 
-        [ClaimsAuthorize("Veiculo", "Excluir")]
+        //[ClaimsAuthorize("Veiculo", "Excluir")]
         [HttpDelete("excluirVeiculo/{id:guid}")]        
         public async Task<ActionResult<VeiculoViewModel>> ExcluirVeiculo(Guid id)
         { 
