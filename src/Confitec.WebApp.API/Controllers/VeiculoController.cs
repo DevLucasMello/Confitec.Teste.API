@@ -2,6 +2,7 @@
 using Confitec.Core.Messages;
 using Confitec.Veiculo.Application.Services;
 using Confitec.Veiculo.Application.ViewModels;
+using Confitec.WebApp.API.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -30,6 +31,7 @@ namespace Confitec.WebApp.API.Controllers
             return veiculos;
         }
 
+        [ClaimsAuthorize("Veiculo", "Consultar")]
         [HttpGet("obterPorCPF/{cpf}")]        
         public async Task<ActionResult<IEnumerable<VeiculoViewModel>>> ObterVeiculosPorCPF(string cpf)
         {
@@ -43,6 +45,7 @@ namespace Confitec.WebApp.API.Controllers
             return CustomResponse(veiculos);
         }
 
+        [ClaimsAuthorize("Veiculo", "Consultar")]
         [HttpGet("obterPorId/{id:guid}")]        
         public async Task<ActionResult<VeiculoViewModel>> ObterVeiculoPorId(Guid id)
         {
@@ -53,6 +56,7 @@ namespace Confitec.WebApp.API.Controllers
             return CustomResponse(veiculo);
         }
 
+        [ClaimsAuthorize("Veiculo", "Adicionar")]
         [HttpPost("adicionarVeiculo")]        
         public async Task<ActionResult<VeiculoViewModel>> CadastrarVeiculo(VeiculoViewModel veiculoViewModel)
         {
@@ -86,6 +90,7 @@ namespace Confitec.WebApp.API.Controllers
             return CustomResponse(veiculoViewModel);
         }
 
+        [ClaimsAuthorize("Veiculo", "Atualizar")]
         [HttpPut("atualizarVeiculo/{id:guid}")]        
         public async Task<ActionResult<VeiculoViewModel>> AtualizarVeiculo(Guid id, VeiculoViewModel veiculoViewModel)
         {
@@ -125,6 +130,7 @@ namespace Confitec.WebApp.API.Controllers
             return CustomResponse(veiculoViewModel);
         }
 
+        [ClaimsAuthorize("Veiculo", "Excluir")]
         [HttpDelete("excluirVeiculo/{id:guid}")]        
         public async Task<ActionResult<VeiculoViewModel>> ExcluirVeiculo(Guid id)
         { 
