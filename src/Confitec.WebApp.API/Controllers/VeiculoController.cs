@@ -2,6 +2,8 @@
 using Confitec.Core.Messages;
 using Confitec.Veiculo.Application.Services;
 using Confitec.Veiculo.Application.ViewModels;
+using Confitec.WebApp.API.Extensions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,9 @@ using System.Threading.Tasks;
 
 namespace Confitec.WebApp.API.Controllers
 {
-    [Route("v1/veiculo")]
+    [Authorize]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/veiculo")]
     public class VeiculoController : MainController
     {
         public readonly IVeiculoAppService _veiculoAppService;
@@ -28,6 +32,7 @@ namespace Confitec.WebApp.API.Controllers
             return veiculos;
         }
 
+        //[ClaimsAuthorize("Veiculo", "Consultar")]
         [HttpGet("obterPorCPF/{cpf}")]        
         public async Task<ActionResult<IEnumerable<VeiculoViewModel>>> ObterVeiculosPorCPF(string cpf)
         {
@@ -41,6 +46,7 @@ namespace Confitec.WebApp.API.Controllers
             return CustomResponse(veiculos);
         }
 
+        //[ClaimsAuthorize("Veiculo", "Consultar")]
         [HttpGet("obterPorId/{id:guid}")]        
         public async Task<ActionResult<VeiculoViewModel>> ObterVeiculoPorId(Guid id)
         {
@@ -51,20 +57,31 @@ namespace Confitec.WebApp.API.Controllers
             return CustomResponse(veiculo);
         }
 
+        //[ClaimsAuthorize("Veiculo", "Adicionar")]
         [HttpPost("adicionarVeiculo")]        
         public async Task<ActionResult<VeiculoViewModel>> CadastrarVeiculo(VeiculoViewModel veiculoViewModel)
         {
             var condutor = await _condutorAppService.ObterCondutorPorId(veiculoViewModel.IdCondutor);
+            var veiculos = await _veiculoAppService.ObterVeiculosPorCPF(veiculoViewModel.CPFCondutor);
 
             if (condutor == null)
             {
-                NotificarErro("Não foi possível localizar o registro do condutor informado");
+                CondutorNulo();
                 return CustomResponse(veiculoViewModel);
             }
             else if (condutor.CPF != veiculoViewModel.CPFCondutor)
             {
-                NotificarErro("CPF do condutor informado é diferente do cadastro");
+                CpfDiferente();
                 return CustomResponse(veiculoViewModel);
+            }
+            
+            foreach (var veiculo in veiculos)
+            {
+                if (veiculo.Placa == veiculoViewModel.Placa)
+                {
+                    VeiculoJaCadastrado();
+                    return CustomResponse(veiculoViewModel);
+                }
             }
 
             if (!ModelState.IsValid) return CustomResponse(ModelState);            
@@ -74,6 +91,7 @@ namespace Confitec.WebApp.API.Controllers
             return CustomResponse(veiculoViewModel);
         }
 
+        //[ClaimsAuthorize("Veiculo", "Atualizar")]
         [HttpPut("atualizarVeiculo/{id:guid}")]        
         public async Task<ActionResult<VeiculoViewModel>> AtualizarVeiculo(Guid id, VeiculoViewModel veiculoViewModel)
         {
@@ -83,6 +101,29 @@ namespace Confitec.WebApp.API.Controllers
                 return CustomResponse(veiculoViewModel);
             }
 
+            var condutor = await _condutorAppService.ObterCondutorPorId(id);
+            var veiculos = await _veiculoAppService.ObterVeiculosPorCPF(veiculoViewModel.CPFCondutor);
+
+            if (condutor == null)
+            {
+                CondutorNulo();
+                return CustomResponse(veiculoViewModel);
+            }
+            else if (condutor.CPF != veiculoViewModel.CPFCondutor)
+            {
+                CpfDiferente();
+                return CustomResponse(veiculoViewModel);
+            }
+
+            foreach (var veiculo in veiculos)
+            {
+                if (veiculo.Placa == veiculoViewModel.Placa)
+                {
+                    VeiculoJaCadastrado();
+                    return CustomResponse(veiculoViewModel);
+                }
+            }
+
             if (!ModelState.IsValid) return CustomResponse(ModelState);            
 
             await _veiculoAppService.AtualizarVeiculo(veiculoViewModel);
@@ -90,6 +131,7 @@ namespace Confitec.WebApp.API.Controllers
             return CustomResponse(veiculoViewModel);
         }
 
+        //[ClaimsAuthorize("Veiculo", "Excluir")]
         [HttpDelete("excluirVeiculo/{id:guid}")]        
         public async Task<ActionResult<VeiculoViewModel>> ExcluirVeiculo(Guid id)
         { 
@@ -109,6 +151,19 @@ namespace Confitec.WebApp.API.Controllers
         private void VeiculoNulo()
         {
             NotificarErro("Não foi possível localizar o veículo");
+        }
+
+        private void CondutorNulo()
+        {
+            NotificarErro("Não foi possível localizar o condutor");
+        }
+        private void CpfDiferente()
+        {
+            NotificarErro("CPF do condutor informado é diferente do cadastro");
+        }
+        private void VeiculoJaCadastrado()
+        {
+            NotificarErro("O condutor já possui este veículo cadastrado");
         }
     }
 }

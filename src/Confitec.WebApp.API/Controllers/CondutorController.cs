@@ -2,6 +2,8 @@
 using Confitec.Condutor.Application.ViewModels;
 using Confitec.Core.Messages;
 using Confitec.Veiculo.Application.Services;
+using Confitec.WebApp.API.Extensions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,9 @@ using System.Threading.Tasks;
 
 namespace Confitec.WebApp.API.Controllers
 {
-    [Route("v1/condutor")]
+    [Authorize]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/condutor")]
     public class CondutorController : MainController
     {
         public readonly ICondutorAppService _condutorAppService;
@@ -20,7 +24,7 @@ namespace Confitec.WebApp.API.Controllers
             _condutorAppService = condutorAppService;
             _veiculoAppService = veiculoAppService;
         }
-
+        
         [HttpGet("obterTodos")]       
         public async Task<IEnumerable<CondutorViewModel>> ObterTodosCondutores()
         {
@@ -28,6 +32,7 @@ namespace Confitec.WebApp.API.Controllers
             return condutores;
         }
 
+        //[ClaimsAuthorize("Condutor", "Consultar")]
         [HttpGet("obterPorPlaca/{placa}")]        
         public async Task<ActionResult<IEnumerable<CondutorViewModel>>> ObterCondutoresPlaca(string placa)
         {  
@@ -57,6 +62,7 @@ namespace Confitec.WebApp.API.Controllers
             return CustomResponse(condutoresDaPlaca);            
         }
 
+        //[ClaimsAuthorize("Condutor", "Consultar")]
         [HttpGet("obterPorId/{id:guid}")]        
         public async Task<ActionResult<CondutorViewModel>> ObterCondutorPorId(Guid id)
         {
@@ -67,6 +73,7 @@ namespace Confitec.WebApp.API.Controllers
             return CustomResponse(condutor);            
         }
 
+        //[ClaimsAuthorize("Condutor", "Consultar")]
         [HttpGet("obterPorCpf/{cpf}")]        
         public async Task<ActionResult<CondutorViewModel>> ObterCondutorPorCPF(string cpf)
         {
@@ -77,6 +84,7 @@ namespace Confitec.WebApp.API.Controllers
             return CustomResponse(condutor);            
         }
 
+        //[ClaimsAuthorize("Condutor", "Adicionar")]
         [HttpPost("adicionarCondutor")]        
         public async Task<ActionResult<CondutorViewModel>> CadastrarCondutor(CondutorViewModel condutorViewModel)
         {
@@ -87,6 +95,7 @@ namespace Confitec.WebApp.API.Controllers
             return CustomResponse(condutorViewModel);
         }
 
+        //[ClaimsAuthorize("Condutor", "Atualizar")]
         [HttpPut("atualizarCondutor/{id:guid}")]        
         public async Task<ActionResult<CondutorViewModel>> AtualizarCondutor(Guid id, CondutorViewModel condutorViewModel)
         {
@@ -103,6 +112,7 @@ namespace Confitec.WebApp.API.Controllers
             return CustomResponse(condutorViewModel);
         }
 
+        //[ClaimsAuthorize("Condutor", "Excluir")]
         [HttpDelete("excluirCondutor/{id:guid}")]        
         public async Task<ActionResult<CondutorViewModel>> ExcluirCondutor(Guid id)
         {
