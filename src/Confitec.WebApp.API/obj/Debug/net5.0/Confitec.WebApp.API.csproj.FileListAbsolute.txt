@@ -81,7 +81,3 @@ C:\dev\Confitec\src\Confitec.WebApp.API\bin\Debug\net5.0\Microsoft.Extensions.Id
 C:\dev\Confitec\src\Confitec.WebApp.API\bin\Debug\net5.0\Humanizer.dll
 C:\dev\Confitec\src\Confitec.WebApp.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\dev\Confitec\src\Confitec.WebApp.API\obj\Debug\net5.0\Confitec.WebApp.API.MvcApplicationPartsAssemblyInfo.cs
-C:\dev\Confitec\src\Confitec.WebApp.API\bin\Debug\net5.0\Confitec.WebApp.API.StaticWebAssets.xml
-C:\dev\Confitec\src\Confitec.WebApp.API\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
-C:\dev\Confitec\src\Confitec.WebApp.API\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.dll
-C:\dev\Confitec\src\Confitec.WebApp.API\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.Embedded.dll
